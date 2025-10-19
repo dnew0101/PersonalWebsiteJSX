@@ -12,14 +12,14 @@ export default function MyPlaneGeometry() {
 
     useFrame(() => {
             myMesh.current.rotation.x = (Math.PI / 2)
-            myMesh.current.position.y = -3
+            myMesh.current.position.y = -1
         })
     return (
         /* Mesh events: https://r3f.docs.pmnd.rs/tutorials/events-and-interaction */
 
         <mesh wireframe='true' ref={myMesh}
             onWheel={(event) => console.log(event)}>
-            <planeGeometry args={[30,30,10,10]}/>
+            <planeGeometry args={[20,40,16,32]}/>
 
             {/* wireframe is a parameter for mesh material
             Source... broke things until it worked.
@@ -28,7 +28,7 @@ export default function MyPlaneGeometry() {
 
             Colors: https://github.com/mrdoob/three.js/blob/master/src/math/Color.js
             */}
-            <meshBasicMaterial wireframe={true} color="white"/>
+            <meshStandardMaterial wireframe={true} color="white"/>
         </mesh>
     )
 }
