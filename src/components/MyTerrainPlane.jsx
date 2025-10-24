@@ -8,7 +8,7 @@ Resources:
 - useTexture: https://r3f.docs.pmnd.rs/tutorials/loading-textures#using-usetexture
 */
 
-export default function MyTerrainPlane({ position, offset, speed = 0.1, amplitude = 5 }) {
+export default function MyTerrainPlane({ position, offset, speed = 0.2, amplitude = 12 }) {
     const myMesh = React.useRef()
     const disp = useTexture('/disMap1.png')
     const material = useRef()
@@ -31,7 +31,7 @@ export default function MyTerrainPlane({ position, offset, speed = 0.1, amplitud
 
         <mesh wireframe='true' ref={myMesh} position={position}
             >
-            <planeGeometry args={[40,80,16,32]}/>
+            <planeGeometry args={[70,100,16,32]}/>
 
             {/* wireframe is a parameter for mesh material
             Source... broke things until it worked.
