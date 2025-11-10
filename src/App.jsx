@@ -22,12 +22,24 @@ function App() {
 
   return (
     <div id="canvas-container">
-      <Canvas>
+      <Canvas style={{
+        position: "absolute"
+      }}>
 
-        <OrbitControls/>
+        {/**
+         * Disables interaction with 3D background; allows for 2D HTML elements to be scrolled through.
+         */}
+        <OrbitControls enableZoom={false} enableRotate={false}/>
 
-        <ScrollControls pages={3} damping={0.25} enableScroll={false}>
-          <MyTerrainPlane color="yellow" offset={-2} position={[0,0,0]}/>
+        <ScrollControls pages={3} damping={0.25} enableScroll={true}>
+          {/*
+          Layered Terrain Planes for a cool "multidimensional" effect. 
+          Jerryrigged? Yeah. But cool? Also yeah. 
+
+          Speed is slightly offset to give a rotating, not-as-predictable variance.
+          */}
+          <MyTerrainPlane color="yellow" offset={-2} speed={0.05} position={[0,0,0]} disMap="disMap1.png" negative={-1}/>
+          <MyTerrainPlane color="yellow" offset={-2} speed={0.0375} position={[0,0,0]} disMap="disMap2.png"/>
           {/* <MyPlaneGeometry color={"yellow"}/> */}
           <ambientLight intensity={1} />
           <directionalLight color="lime" position={[0, -1, 2]} />
@@ -48,6 +60,11 @@ function App() {
 
         <fogExp2 attach="fog" color="indigo" density={0.09} />
       </Canvas>
+
+      <div className="relative">
+        Hi
+      </div>
+      
     </div>
   )
 }
