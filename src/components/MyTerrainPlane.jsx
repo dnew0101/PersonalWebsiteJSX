@@ -8,7 +8,7 @@ Resources:
 - useTexture: https://r3f.docs.pmnd.rs/tutorials/loading-textures#using-usetexture
 */
 
-export default function MyTerrainPlane({ position, offset, speed, amplitude = 12, disMap }) {
+export default function MyTerrainPlane({ position, xOffset, yOffset, speed, amplitude = 12, disMap }) {
     const myMesh = React.useRef()
     const disp = useTexture(disMap)
     const material = useRef()
@@ -22,10 +22,11 @@ export default function MyTerrainPlane({ position, offset, speed, amplitude = 12
     */
     useFrame((state) => {
             myMesh.current.rotation.x = (Math.PI/2)
-            myMesh.current.position.y = offset
+            myMesh.current.position.x = xOffset
+            myMesh.current.position.y = yOffset
             myMesh.current.position.z = 1
             const t = state.clock.getElapsedTime()
-            const factor = -0.25+(-1*(Math.abs(Math.sin(t * speed))));
+            const factor = -0.05+(-1*(Math.abs(Math.sin(t * speed))));
             material.current.displacementScale = (amplitude * factor)
         })
     return (
