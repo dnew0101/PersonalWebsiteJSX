@@ -13,11 +13,8 @@ export default function MyAnimatedBox({ position, size, color }) {
     //Clock object is a three.js object
     //Source: https://threejs.org/docs/#api/en/core/Clock
     useFrame((state, delta) => {
-        myMesh.current.rotation.x += delta
-        myMesh.current.rotation.y += delta
-
-        myMesh.current.position.z = Math.sin(state.clock.elapsedTime)*1.5
-        myMesh.current.position.x = Math.sin(state.clock.elapsedTime*2)*2
+        myMesh.current.rotation.x += (0.5)*delta
+        myMesh.current.rotation.y += (0.5)*delta
     })
     return (
         /* Mesh events: https://r3f.docs.pmnd.rs/tutorials/events-and-interaction */
@@ -32,7 +29,7 @@ export default function MyAnimatedBox({ position, size, color }) {
 
             Colors: https://github.com/mrdoob/three.js/blob/master/src/math/Color.js
             */}
-            <meshBasicMaterial color={color} wireframe={true} wireframeLinewidth={2.0}/>
+            <meshBasicMaterial color={color} wireframe={true} wireframeLinewidth={1.0}/>
         </mesh>
     )
 }

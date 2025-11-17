@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const ResumeCard = ({ icon, contact, link }) => {
     return (
-        <div className="flex flex-row border justify-center w-[94%] lg:w-[60%] flex-shrink-0 gap-4 bg-black
+        <div className="flex flex-row border justify-center w-[94%] flex-shrink-0 gap-4 bg-black
             transform-gpu
             transition-[transform, background-color, box-shadow]
             duration-350
@@ -11,6 +11,7 @@ const ResumeCard = ({ icon, contact, link }) => {
             hover:bg-fuchsia-800
             hover:shadow-2xl
             hover:rounded-2xl
+            hover:opacity-80
             focus:outline-none
             focus-visible:ring-2
           focus-visible:ring-indigo-500"

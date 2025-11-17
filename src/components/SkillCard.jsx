@@ -11,6 +11,7 @@ const SkillCard = ({ icon, skill, color }) => {
             ${color}
             hover:shadow-2xl
             hover:rounded-2xl
+            hover:opacity-80
             focus:outline-none
             focus-visible:ring-2
           focus-visible:ring-indigo-500`
