@@ -54,9 +54,9 @@ function App() {
               <h1>
                 David Newman
               </h1>
-              <h3>
+              <p>
                 CS student at UW Tacoma
-              </h3>
+              </p>
             </div>
           </div>
         </div>
