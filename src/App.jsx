@@ -9,8 +9,14 @@ import React, { useRef, Suspense } from "react";
 import Skull from '../public/Skull';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
-import ScrollTrigger from 'gsap/ScrollTrigger'
-
+import ScrollTrigger from 'gsap/ScrollTrigger';
+import ProjectCard from './components/ProjectCard';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faReact, faJava, faCss3Alt, faSquareLinkedin, faSquareGithub, faStackOverflow } from '@fortawesome/free-brands-svg-icons';
+import { faDatabase, faEnvelope, faFile } from '@fortawesome/free-solid-svg-icons';
+import SkillCard from './components/SkillCard';
+import ContactCard from './components/ContactCard';
+import ResumeCard from './components/ResumeCard';
 
 
 /* 
@@ -31,13 +37,17 @@ https://gsap.com/docs/v3/Plugins/ScrollTrigger/
 
 
 function App() {
+  const emailAddress = import.meta.env.VITE_EMAIL_ADDRESS || '';
+  const mailLink = emailAddress
+    ? `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(emailAddress)}&su=${encodeURIComponent('Hello')}&body=${encodeURIComponent('Hi David,%0A%0A')}`
+    : 'mailto:';
 
   return (
     <>
       <div id="canvas-container">
         <div className="absolute flex w-full h-screen justify-center">
           <div className="flex flex-col text-center justify-center mb-20">
-            <div className="bg-black opacity-80 border-1 px-2">
+            <div className="bg-black opacity-80 border-1 px-3 py-1">
               <h1>
                 David Newman
               </h1>
@@ -87,27 +97,77 @@ function App() {
       </div>
 
       <div>
-        <div className="content-body flex flex-col bg-black h-screen opacity-80 border-t-1">
+        <div className="content-body flex flex-col gap-8 bg-black h-full opacity-85 border-t-1">
 
-          <div className="about-me flex flex-col w-full items-center text-center">
-            <div className="bg-black border-1 px-2">
-              <h1>
-                David Newman
-              </h1>
-              <h3>
-                CS student at UW Tacoma
-              </h3>
+          <div className="about-me flex flex-col w-full items-center text-center mt-8">
+            <div className="bg-neutral-900 border-1 px-2 w-[80%] sm:w-[80%] md:w-[60%] xl:w-[50%]">
+                <p className="text-4xl underline font-bold my-4">
+                  About Me
+                </p>
+              <div className="flex flex-row text-center justify-center">
+                <p className="text-box w-[80%] my-4 text-xs">
+                  I'm currently in my <span className="border-b">senior year</span> at <span className="text-purple-500 font-bold">UW Tacoma</span>, in the <span className="border-b">Computer Science</span> undergraduate program. <br/> <br/>
+                  Within my classes, I've found <span>Computer Architecture</span> to be the most interesting, specifically the overlap between the circuits we'd build in Logisim Evolution and the MIPS .asm files we write for the MARS simulator. This was explored when we reconstructed a rudimentary MIPS CPU and ran .asm files throughout! <br/><br/>
+                  Outside of class, my interests tend to be mostly <span className="italic">music-related</span>. This usually consists of guitar covers (mixed/mastered in <span className="text-green-300">Ableton 12</span>) or diving into music software development, with frameworks like <span className="text-amber-600">JUCE</span>, for C++.
+                </p>
+              </div>
             </div>
           </div>
 
-          <div className="projects flex flex-col w-full items-center text-center">
-            <div className="bg-black opacity-80 border-1 px-2">
-              <h1>
-                David Newman
-              </h1>
-              <h3>
-                CS student at UW Tacoma
-              </h3>
+          <div className="projects flex flex-col w-full items-center text-center mt-8">
+            <div className="bg-neutral-900 border-1 px-2 w-[80%] sm:w-[80%] md:w-[60%] xl:w-[50%]">
+                <p className="text-4xl underline font-bold my-4">
+                  Projects
+                </p>
+              <div className="flex flex-row flex-wrap text-center justify-center items-start gap-2 mb-4">
+                <ProjectCard 
+                  title="Raven Inkwork" 
+                  thumbNail="ravenInkwork.png"
+                  description="Full-stack NextJS website, hosted on Vercel. Designed with no-nonsense UX, high-contrast accessibility, SEO optimization, and performance optimization." 
+                  link="" /> {/* https://www.raveninkwork.com */}
+                <ProjectCard 
+                  title="Raven Inkwork" 
+                  thumbNail="ravenInkwork.png"
+                  description="Full-stack NextJS website, hosted on Vercel. Designed with no-nonsense UX, high-contrast accessibility, SEO optimization, and performance optimization." 
+                  link="" /> {/* https://www.raveninkwork.com */}
+                <ProjectCard 
+                  title="Raven Inkwork" 
+                  thumbNail="ravenInkwork.png"
+                  description="Full-stack NextJS website, hosted on Vercel. Designed with no-nonsense UX, high-contrast accessibility, SEO optimization, and performance optimization." 
+                  link="" /> {/* https://www.raveninkwork.com */}
+              </div>
+            </div>
+          </div>
+
+          <div className="skills flex flex-col w-full items-center text-center mt-8">
+            <div className="bg-neutral-900 border-1 px-2 w-[80%] sm:w-[80%] md:w-[60%] xl:w-[50%]">
+                <p className="text-4xl underline font-bold my-4">
+                  Skills
+                </p>
+              <div className="flex flex-row flex-wrap text-center justify-center items-center gap-4 mb-8">
+
+                <SkillCard icon={faReact} skill="React" color="hover:bg-blue-600"/>
+                <SkillCard icon={faJava} skill="Java" color="hover:bg-amber-700"/>
+                <SkillCard icon={faCss3Alt} skill="CSS" color="hover:bg-indigo-600"/>
+                <SkillCard icon={faDatabase} skill="SQL" color="hover:bg-blue-400"/>
+
+              </div>
+            </div>
+          </div>
+
+          <div className="contact flex flex-col w-full items-center text-center mt-8 mb-8">
+            <div className="bg-neutral-900 border-1 px-2 w-[80%] sm:w-[80%] md:w-[60%] xl:w-[50%]">
+                <p className="text-4xl underline font-bold my-4">
+                  Get in touch!
+                </p>
+              <div className="flex flex-row flex-wrap text-center justify-center items-center gap-4 mb-8">
+                <ResumeCard icon={faFile} contact="Resumé"/>
+                <ContactCard icon={faSquareLinkedin} color="hover:bg-blue-500" contact="LinkedIn" link="https://www.linkedin.com/in/david-newman0101/"/>
+                <ContactCard icon={faEnvelope} color="hover:bg-green-600" contact="Gmail" link={mailLink} />
+                <ContactCard icon={faSquareGithub} color="hover:bg-purple-700" contact="Github" link="https://github.com/dnew0101"/>
+                <ContactCard icon={faStackOverflow} color="hover:bg-yellow-700" contact="Stack Overflow" link="https://stackexchange.com/users/44512754/david-n"/>
+
+              </div>
             </div>
           </div>
 
