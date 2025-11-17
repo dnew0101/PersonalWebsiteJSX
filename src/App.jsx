@@ -179,7 +179,7 @@ function App() {
                   Get in touch!
                 </p>
               <div className="flex flex-row flex-wrap text-center justify-center items-center gap-4 mb-8">
-                <ResumeCard icon={faFile} contact="Resumé"/>
+                <ResumeCard icon={faFile} contact="Resumé" link="https://drive.google.com/file/d/1YxpbcZWLw49IF_EKvB41ZZ9hsT2j7K1O/view?usp=sharing"/>
                 <ContactCard icon={faSquareLinkedin} color="hover:bg-blue-500" contact="LinkedIn" link="https://www.linkedin.com/in/david-newman0101/"/>
                 <ContactCard icon={faEnvelope} color="hover:bg-green-600" contact="Gmail" link={mailLink} />
                 <ContactCard icon={faSquareGithub} color="hover:bg-purple-700" contact="Github" link="https://github.com/dnew0101"/>
