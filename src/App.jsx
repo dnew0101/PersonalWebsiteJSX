@@ -115,9 +115,9 @@ function App() {
                   About Me
                 </p>
               <div className="flex flex-row items-center text-center justify-center mb-4">
-                <div className="flex flex-col bg-neutral-900 border-1 px-2 w-[80%] items-center text-center">
+                <div className="flex flex-col bg-neutral-950 border-1 px-2 w-[80%] items-center text-center">
                   <p className="text-box w-[80%] my-4 text-sm">
-                    I'm currently in my <span className="border-b">senior year</span> at <span className="text-purple-500 font-bold">UW Tacoma</span>, in the <span className="border-b">Computer Science</span> undergraduate program. <br/> <br/>
+                    I'm currently in my senior year at <span className="text-purple-500 font-bold">UW Tacoma</span>, in the Computer Science undergraduate program. <br/> <br/>
                     Within my classes, I've found <span>Computer Architecture</span> to be the most interesting, specifically the overlap between the circuits we'd build in Logisim Evolution and the MIPS .asm files we write for the MARS simulator. This was explored when we reconstructed a rudimentary MIPS CPU and ran .asm files throughout! <br/><br/>
                     Outside of class, my interests tend to be mostly <span className="italic">music-related</span>. This usually consists of guitar covers (mixed/mastered in <span className="text-green-300">Ableton 12</span>) or diving into music software development, with frameworks like <span className="text-amber-600">JUCE</span>, for C++.
                   </p>
