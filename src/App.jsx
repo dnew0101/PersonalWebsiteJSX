@@ -39,15 +39,20 @@ https://gsap.com/docs/v3/Plugins/ScrollTrigger/
 
 
 function App() {
+  //util function call for random vector generation.
   const boxPositions = React.useMemo(() => generateDistantPositions(30,20), []);
+
+  //pulls from .env file for email address.
   const emailAddress = import.meta.env.VITE_EMAIL_ADDRESS || '';
+
+  //creates mail link via string interpolation.
   const mailLink = emailAddress
-    ? `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(emailAddress)}&su=${encodeURIComponent('Hello')}&body=${encodeURIComponent('Hi David,%0A%0A')}`
+    ? `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(emailAddress)}&su=${encodeURIComponent('Hello')}&body=${encodeURIComponent('Hi David,')}`
     : 'mailto:';
 
   return (
     <>
-      <div id="canvas-container">
+      <div id="canvas-container" className="w-[100vw]">
         <div className="absolute flex w-full h-screen justify-center">
           <div className="flex flex-col text-center justify-center mb-40">
             <div className="baseplate bg-black opacity-80 border-1 px-3 py-1">
@@ -107,7 +112,7 @@ function App() {
       </div>
 
       <div>
-        <div className="content-body flex flex-col gap-8 bg-black h-full opacity-85 border-t-1">
+        <div className="content-body flex flex-col gap-8 bg-black h-full w-[100vw] opacity-85 border-t-1">
 
           <div className="about-me flex flex-col w-full items-center text-center mt-16">
             <div className="bg-neutral-900 border-1 px-2 w-[80%] sm:w-[80%] md:w-[60%] xl:w-[50%]">
