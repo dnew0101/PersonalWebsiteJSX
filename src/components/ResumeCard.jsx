@@ -11,7 +11,7 @@ const ResumeCard = ({ icon, contact, link }) => {
             hover:bg-fuchsia-800
             hover:shadow-2xl
             hover:rounded-2xl
-            hover:opacity-80
+            hover:opacity-100
             focus:outline-none
             focus-visible:ring-2
           focus-visible:ring-indigo-500"

@@ -5,7 +5,7 @@ const ProjectCard = ({ title, thumbNail, description, link }) => {
         duration-350
         hover:scale-105
         hover:rounded-xl
-        hover:bg-indigo-950
+        hover:bg-black
         hover:opacity-100">
             <a href={link} className="flex flex-col w-full h-full items-center">
                 <h3 className="text-2xl">

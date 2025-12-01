@@ -126,7 +126,7 @@ function App() {
         
       </div>
       <div>
-        <div className="content-body flex flex-col gap-8 bg-black h-full w-[100vw] opacity-90 border-t-1">
+        <div className="content-body flex flex-col gap-8 bg-black h-full w-[100vw] opacity-95 border-t-1">
 
           <div id="about-me" className="about-me flex flex-col w-full items-center text-center mt-16">
             <div className="bg-neutral-900 border-1 px-2 w-[80%] sm:w-[80%] md:w-[60%] xl:w-[50%]">
@@ -185,10 +185,10 @@ function App() {
                 </p>
               <div className="flex flex-row flex-wrap text-center justify-center items-center gap-4 mb-8">
 
-                <SkillCard icon={faReact} skill="React" color="hover:bg-blue-600"/>
+                <SkillCard icon={faReact} skill="React" color="hover:bg-blue-700"/>
                 <SkillCard icon={faJava} skill="Java" color="hover:bg-amber-700"/>
-                <SkillCard icon={faCss3Alt} skill="CSS" color="hover:bg-indigo-600"/>
-                <SkillCard icon={faDatabase} skill="SQL" color="hover:bg-blue-400"/>
+                <SkillCard icon={faCss3Alt} skill="CSS" color="hover:bg-indigo-700"/>
+                <SkillCard icon={faDatabase} skill="SQL" color="hover:bg-green-700"/>
 
               </div>
             </div>
@@ -201,8 +201,8 @@ function App() {
                 </p>
               <div className="flex flex-row flex-wrap text-center justify-center items-center gap-4 mb-8">
                 <ResumeCard icon={faFile} contact="Resumé" link="https://drive.google.com/file/d/1YxpbcZWLw49IF_EKvB41ZZ9hsT2j7K1O/view?usp=sharing"/>
-                <ContactCard icon={faSquareLinkedin} color="hover:bg-blue-500" contact="LinkedIn" link="https://www.linkedin.com/in/david-newman0101/"/>
-                <ContactCard icon={faEnvelope} color="hover:bg-green-600" contact="Gmail" link={mailLink} />
+                <ContactCard icon={faSquareLinkedin} color="hover:bg-blue-700" contact="LinkedIn" link="https://www.linkedin.com/in/david-newman0101/"/>
+                <ContactCard icon={faEnvelope} color="hover:bg-green-700" contact="Gmail" link={mailLink} />
                 <ContactCard icon={faSquareGithub} color="hover:bg-purple-700" contact="Github" link="https://github.com/dnew0101"/>
                 <ContactCard icon={faStackOverflow} color="hover:bg-yellow-700" contact="Stack Overflow" link="https://stackexchange.com/users/44512754/david-n"/>
 
