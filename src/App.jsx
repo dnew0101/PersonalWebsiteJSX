@@ -39,8 +39,8 @@ https://gsap.com/docs/v3/Plugins/ScrollTrigger/
 
 
 function App() {
-  //util function call for random vector generation.
-  const boxPositions = React.useMemo(() => generateDistantPositions(30,20), []);
+  //util function call for random 3D vector generation.
+  const boxPositions = React.useMemo(() => generateDistantPositions(50,50,400), []);
 
   //pulls from .env file for email address.
   const emailAddress = import.meta.env.VITE_EMAIL_ADDRESS || '';
@@ -80,23 +80,22 @@ function App() {
 
             Speed is slightly offset to give a rotating, not-as-predictable variance.
             */}
-            <MyTerrainPlane color="yellow" xOffset={0} yOffset={-2} speed={0.08} position={[0,0,0]} disMap="disMapA.png" negative={-1}/>
-            <MyTerrainPlane color="yellow" xOffset={0} yOffset={-2} speed={0.09} position={[0,0,0]} disMap="disMapB.png"/>
+            <MyTerrainPlane color="yellow" xOffset={0} yOffset={-5} speed={0.09} position={[0,-5,0]} disMap="disMapA.png" negative={-1} amplitude={24}/>
+            {/* <MyTerrainPlane color="yellow" xOffset={0} yOffset={-5} speed={0.09} position={[0,-5,0]} disMap="disMapB.png" amplitude={32}/> */}
             {/* <MyPlaneGeometry color={"yellow"}/> */}
             <ambientLight intensity={1} />
-            <directionalLight color="lime" position={[0, -1, 2]} />
+            <directionalLight color="indigo" position={[0, -1, 2]} />
             {/* <MyAnimatedSphere position={[0,0,-5]} size={[2, 15, 8, 0, Math.PI*2, 0, Math.PI]} color={"white"}/> */}
 
             {boxPositions.map((pos, index) => (
               <MyAnimatedBox
                 key={index}
                 position={pos}
-                size={[1, 1, 1]}
-                color={`Green`}
+                size={[7,7,7]}
+                color={`White`}
               />
             ))}
 
-          {/* <Skull position={[0,0,-5]}/> */}
           <Stars
           radius={100}
           depth={50}
@@ -106,7 +105,20 @@ function App() {
           fade
           />
 
-          <fogExp2 attach="fog" color="indigo" density={0.04} />
+          <Stars
+          radius={100}
+          depth={5}
+          count={200}
+          factor={7}
+          saturation={2}
+          fade
+          />
+
+          <fogExp2 
+          attach="fog" 
+          color="black" 
+          density={0.005} 
+          />
         </Canvas>
         
       </div>
@@ -120,7 +132,7 @@ function App() {
                   About Me
                 </p>
               <div className="flex flex-row items-center text-center justify-center mb-4">
-                <div className="flex flex-col bg-neutral-950 border-1 px-2 w-[80%] items-center text-center">
+                <div className="flex flex-col bg-neutral-950 border-1 px-2 w-[80%] items-center text-center mb-4">
                   <p className="text-box w-[80%] my-4 text-sm">
                     I'm currently in my senior year at <span className="text-purple-500 font-bold">UW Tacoma</span>, in the Computer Science undergraduate program. <br/> <br/>
                     Within my classes, I've found <span>Computer Architecture</span> to be the most interesting, specifically the overlap between the circuits we'd build in Logisim Evolution and the MIPS .asm files we write for the MARS simulator. This was explored when we reconstructed a rudimentary MIPS CPU and ran .asm files throughout! <br/><br/>

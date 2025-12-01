@@ -1,5 +1,7 @@
 import { useFrame } from '@react-three/fiber';
 import React from 'react';
+import Skull from '../../public/Skull';
+
 
 /**
  * Documentation reference: https://r3f.docs.pmnd.rs/tutorials/basic-animations#basic-animations
@@ -13,14 +15,16 @@ export default function MyAnimatedBox({ position, size, color }) {
     //Clock object is a three.js object
     //Source: https://threejs.org/docs/#api/en/core/Clock
     useFrame((state, delta) => {
-        myMesh.current.rotation.x += (0.5)*delta
-        myMesh.current.rotation.y += (0.5)*delta
+        myMesh.current.rotation.x += (0.25)*delta
+        myMesh.current.rotation.y += (0.25)*delta
     })
     return (
         /* Mesh events: https://r3f.docs.pmnd.rs/tutorials/events-and-interaction */
 
         <mesh ref={myMesh} position={position} className="z-20">
-            <boxGeometry args={size}/>
+            <boxGeometry args={size}>
+                {/* <Skull position={[0,0,0]}/> */}
+            </boxGeometry>
 
             {/* wireframe is a parameter for mesh material
             Source... broke things until it worked.

@@ -11,11 +11,11 @@ Title: Skull Salazar (Downloadable)
  * Reference material: https://www.youtube.com/watch?v=M5nt1GamB_g
  */
 
-import React from 'react'
 import { useGLTF } from '@react-three/drei'
 
 export default function Model(props) {
-  const { nodes, materials } = useGLTF('/skull.gltf')
+  const url = `${import.meta.env.BASE_URL}skull.gltf`
+  const { nodes, materials } = useGLTF(url)
   return (
     <group {...props} dispose={null}>
       <group rotation={[-Math.PI / 2, 0.019, 0]}>
@@ -28,4 +28,4 @@ export default function Model(props) {
   )
 }
 
-useGLTF.preload('/skull.gltf')
+useGLTF.preload(`${import.meta.env.BASE_URL}skull.gltf`)

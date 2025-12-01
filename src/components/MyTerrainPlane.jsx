@@ -8,7 +8,7 @@ Resources:
 - useTexture: https://r3f.docs.pmnd.rs/tutorials/loading-textures#using-usetexture
 */
 
-export default function MyTerrainPlane({ position, xOffset, yOffset, speed, amplitude = 12, disMap }) {
+export default function MyTerrainPlane({ position, xOffset, yOffset, speed, amplitude, disMap, negative = 1 }) {
     const myMesh = React.useRef()
     const disp = useTexture(disMap)
     const material = useRef()
@@ -25,16 +25,16 @@ export default function MyTerrainPlane({ position, xOffset, yOffset, speed, ampl
             myMesh.current.position.x = xOffset
             myMesh.current.position.y = yOffset
             myMesh.current.position.z = 1
-            const t = state.clock.getElapsedTime()
-            const factor = -0.05+(-1*(Math.abs(Math.sin(t * speed))));
+            const t = (negative)*state.clock.getElapsedTime()
+            const factor = (-1*(Math.abs(Math.sin(t * speed))));
             material.current.displacementScale = (amplitude * factor)
         })
     return (
         /* Mesh events: https://r3f.docs.pmnd.rs/tutorials/events-and-interaction */
 
-        <mesh wireframe='true' ref={myMesh} position={position}
+        <mesh ref={myMesh} position={position}
             >
-            <planeGeometry args={[70,100,16,32]}/>
+            <planeGeometry args={[400,500,50,100]}/>
 
             {/* wireframe is a parameter for mesh material
             Source... broke things until it worked.
@@ -45,7 +45,8 @@ export default function MyTerrainPlane({ position, xOffset, yOffset, speed, ampl
             */}
             <meshStandardMaterial 
                 ref={material}
-                wireframe={true} 
+                wireframe={true}
+                wireframeLinewidth={3}
                 color="white" 
                 displacementMap={disp}
                 displacementScale={2}
