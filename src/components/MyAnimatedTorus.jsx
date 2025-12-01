@@ -13,11 +13,8 @@ export default function MyAnimatedTorus({ position, size, color }) {
     //Clock object is a three.js object
     //Source: https://threejs.org/docs/#api/en/core/Clock
     useFrame((state, delta) => {
-        myMesh.current.rotation.y += (delta*-0.5)
+        myMesh.current.rotation.y += (delta*-0.15)
         myMesh.current.rotation.x += (delta*-0.2)
-
-        myMesh.current.position.z = Math.sin(state.clock.elapsedTime)*1.5
-        myMesh.current.position.x = Math.sin(state.clock.elapsedTime*2)*2
     })
     return (
         /* Mesh events: https://r3f.docs.pmnd.rs/tutorials/events-and-interaction */

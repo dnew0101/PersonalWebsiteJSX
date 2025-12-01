@@ -1,11 +1,13 @@
 import { Canvas } from '@react-three/fiber';
 import './App.css';
-import MyPlaneGeometry from './components/MyPlaneGeometry';
+import { ChevronDown } from 'lucide-react';
+import Navbar from './components/Navbar';
 import MyAnimatedSphere from './components/MyAnimatedSphere';
-import MyTerrainPlane from './components/MyTerrainPlane'
+import MyAnimatedTorus from './components/MyAnimatedTorus';
+import MyTerrainPlane from './components/MyTerrainPlane';
 import { OrbitControls, ScrollControls, Stars } from '@react-three/drei';
 import Overlay from './components/Overlay';
-import React, { useRef, Suspense } from "react";
+import React, { useRef, Suspense, useEffect, useState } from "react";
 import Skull from '../public/Skull';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
@@ -53,7 +55,8 @@ function App() {
   return (
     <>
       <div id="canvas-container" className="w-[100vw]">
-        <div className="absolute flex w-full h-screen justify-center">
+        <Navbar />
+        <div id="hero" className="absolute flex w-full h-screen justify-center">
           <div className="flex flex-col text-center justify-center mb-40">
             <div className="baseplate bg-black opacity-80 border-1 px-3 py-1">
               <h1>
@@ -122,11 +125,10 @@ function App() {
         </Canvas>
         
       </div>
-
       <div>
-        <div className="content-body flex flex-col gap-8 bg-black h-full w-[100vw] opacity-85 border-t-1">
+        <div className="content-body flex flex-col gap-8 bg-black h-full w-[100vw] opacity-90 border-t-1">
 
-          <div className="about-me flex flex-col w-full items-center text-center mt-16">
+          <div id="about-me" className="about-me flex flex-col w-full items-center text-center mt-16">
             <div className="bg-neutral-900 border-1 px-2 w-[80%] sm:w-[80%] md:w-[60%] xl:w-[50%]">
                 <p className="text-4xl underline font-bold my-4">
                   About Me
@@ -143,7 +145,7 @@ function App() {
             </div>
           </div>
 
-          <div className="projects flex flex-col w-full items-center text-center mt-8">
+          <div id="projects" className="projects flex flex-col w-full items-center text-center mt-8">
             <div className="bg-neutral-900 border-1 px-2 w-[80%] sm:w-[80%] md:w-[60%] xl:w-[50%]">
                 <p className="text-4xl underline font-bold my-4">
                   Projects
@@ -176,7 +178,7 @@ function App() {
             </div>
           </div>
 
-          <div className="skills flex flex-col w-full items-center text-center mt-8">
+          <div id="skills" className="skills flex flex-col w-full items-center text-center mt-8">
             <div className="bg-neutral-900 border-1 px-2 w-[80%] sm:w-[80%] md:w-[60%] xl:w-[50%]">
                 <p className="text-4xl underline font-bold my-4">
                   Skills
@@ -192,7 +194,7 @@ function App() {
             </div>
           </div>
 
-          <div className="contact flex flex-col w-full items-center text-center mt-8 mb-16">
+          <div id="contact" className="contact flex flex-col w-full items-center text-center mt-8 mb-16">
             <div className="bg-neutral-900 border-1 px-2 w-[80%] sm:w-[80%] md:w-[60%] xl:w-[50%]">
                 <p className="text-4xl underline font-bold my-4">
                   Get in touch!
