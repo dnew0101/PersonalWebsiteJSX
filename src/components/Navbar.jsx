@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 export default function Navbar() {
   const links = [
@@ -9,7 +9,12 @@ export default function Navbar() {
     { label: 'Get In Touch!', id: 'contact' },
   ];
 
+  const [activeId, setActiveId] = useState(null);
+
   const handleClick = (id) => {
+    // mark selected button as active
+    setActiveId(id);
+
     const el = document.getElementById(id);
     if (!el) return;
 
@@ -33,13 +38,16 @@ export default function Navbar() {
                 <button
                   onClick={() => handleClick(l.id)}
                   aria-label={`Go to ${l.label}`}
-                  className="cursor-pointer px-3 py-1 text-sm bg-black text-white border border-white rounded-none 
-                  transition-transform duration-400 ease-in-out 
-                  hover:scale-105
-                  hover:bg-neutral-900 
-                  focus:outline-none 
-                  focus-visible:ring-4 
-                  focus-visible:ring-white"
+                  className={
+                    `cursor-pointer px-3 py-1 text-sm bg-black text-white border border-white rounded-none
+                    transition-transform duration-200 ease-in-out
+                    hover:scale-105 hover:bg-white hover:text-black` +
+                    (activeId === l.id ? ' scale-105 bg-white ' : '')
+                  }
+                  style={{
+                    color: activeId === l.id ? '#000' : undefined,
+                    backgroundColor: activeId === l.id ? '#fff' : undefined,
+                  }}
                 >
                   {l.label}
                 </button>
