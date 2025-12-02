@@ -172,7 +172,7 @@ function App() {
                 <ProjectCard 
                   title="Rare Breed Ink" 
                   thumbNail="rareBreedInk.png"
-                  description="Tattoo website built with SquareSpace. My job was to optimize the SEO score and utilize SquareSpace's CSS ''code injection'' for custom styling." 
+                  description="Tattoo website built with SquareSpace. My job was to optimize the SEO score and utilize SquareSpace's CSS 'code injection' for custom styling." 
                   link="https://www.rarebreedinkstudio.com/" /> {/* https://www.rarebreedinkstudio.com/ */}
               </div>
             </div>
@@ -200,7 +200,7 @@ function App() {
                   Get in touch!
                 </p>
               <div className="flex flex-row flex-wrap text-center justify-center items-center gap-4 mb-8">
-                <ResumeCard icon={faFile} contact="Resumé" link="https://drive.google.com/file/d/1YxpbcZWLw49IF_EKvB41ZZ9hsT2j7K1O/view?usp=sharing"/>
+                <ResumeCard icon={faFile} contact="Resumé" link="https://www.dropbox.com/scl/fi/vbqj4c0mt0lfiyeuoptot/Updated_Resume.pdf?rlkey=ficm7f0o76jjuq2q5awk8f3ex&st=bkdhew50&dl=0"/>
                 <ContactCard icon={faSquareLinkedin} color="hover:bg-blue-700" contact="LinkedIn" link="https://www.linkedin.com/in/david-newman0101/"/>
                 <ContactCard icon={faEnvelope} color="hover:bg-green-700" contact="Gmail" link={mailLink} />
                 <ContactCard icon={faSquareGithub} color="hover:bg-purple-700" contact="Github" link="https://github.com/dnew0101"/>
