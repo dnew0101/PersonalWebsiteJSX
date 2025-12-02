@@ -1,6 +1,6 @@
-const ProjectCard = ({ title, thumbNail, description, link }) => {
+const ProjectCard = ({ title, thumbNail, description, techStack, link }) => {
     return (
-        <div className="group border m-4 px-2 py-3 w-full sm:w-[40%] min-w-[200px] max-w-[400px] max-h-[600px] h-auto bg-neutral-950
+        <div className="group border m-4 px-2 py-3 w-full sm:w-[40%] min-w-[200px] max-w-[400px] max-h-[750px] h-auto bg-neutral-950
         transition-[transform, background-color, box-shadow]
         duration-350
         hover:scale-105
@@ -16,7 +16,10 @@ const ProjectCard = ({ title, thumbNail, description, link }) => {
                 </div>
                 <p className="w-[80%] my-1 sm:my-4 text-xs border p-2 border-neutral-600
                 group-hover:bg-black">
-                    {description}
+                    <span className="font-bold underline">Description:</span> {description}
+                    <br/>
+                    <br/>
+                    <span className="font-bold underline">Tech Stack:</span> {techStack}
                 </p>
             </a>
         </div>

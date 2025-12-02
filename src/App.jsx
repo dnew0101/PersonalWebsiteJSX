@@ -42,7 +42,7 @@ https://gsap.com/docs/v3/Plugins/ScrollTrigger/
 
 function App() {
   //util function call for random 3D vector generation.
-  const boxPositions = React.useMemo(() => generateDistantPositions(50,50,400), []);
+  const boxPositions = React.useMemo(() => generateDistantPositions(70,50,400), []);
 
   //pulls from .env file for email address.
   const emailAddress = import.meta.env.VITE_EMAIL_ADDRESS || '';
@@ -120,7 +120,7 @@ function App() {
           <fogExp2 
           attach="fog" 
           color="black" 
-          density={0.005} 
+          density={0.0065} 
           />
         </Canvas>
         
@@ -146,7 +146,7 @@ function App() {
           </div>
 
           <div id="projects" className="projects flex flex-col w-full items-center text-center mt-8">
-            <div className="bg-neutral-900 border-1 px-2 w-[80%] sm:w-[80%] md:w-[60%] xl:w-[50%]">
+            <div className="bg-neutral-900 border-1 px-2 w-[80%] sm:w-[80%] md:w-[70%] xl:w-[50%]">
                 <p className="text-4xl underline font-bold my-4">
                   Projects
                 </p>
@@ -157,22 +157,26 @@ function App() {
                 <ProjectCard 
                   title="Raven Inkwork" 
                   thumbNail="ravenInkwork.png"
-                  description="Full-stack NextJS website, hosted on Vercel. Designed with no-nonsense UX, high-contrast accessibility, SEO optimization, and performance optimization." 
+                  description="Full-stack NextJS website, hosted on Vercel. Designed with no-nonsense UX, high-contrast accessibility, SEO optimization, and performance optimization."
+                  techStack="NextJS, TailwindCSS, Vite, TypeScript, React, Vercel"
                   link="https://www.raveninkwork.com" /> {/* https://www.raveninkwork.com */}
                 <ProjectCard 
                   title="Phacebook" 
                   thumbNail="phacebook.png"
                   description="Reverse engineered Facebook log-in to study the phishing attack pipeline. Uploads submitted credentials to private Firebase database." 
+                  techStack="React, JavaScript, TailwindCSS, Firebase"
                   link="https://github.com/dnew0101/phacebook" /> {/* https://github.com/dnew0101/phacebook */}
                 <ProjectCard 
-                  title="JUCE Gain Plug-In" 
+                  title="Gain Audio Plug-In" 
                   thumbNail="gainProject.png"
-                  description="A simple audio plug-in, using the JUCE framework, that modifies incoming sample by increasing the buffer's decibel value by a factor of the slider's current value." 
+                  description="A simple audio plug-in, using the JUCE framework, that modifies incoming sample by increasing the buffer's decibel value by a factor of the slider's current value."
+                  techStack="JUCE, C++" 
                   link="https://github.com/dnew0101/gain_project_demo" /> {/* https://github.com/dnew0101/gain_project_demo */}
                 <ProjectCard 
                   title="Rare Breed Ink" 
                   thumbNail="rareBreedInk.png"
                   description="Tattoo website built with SquareSpace. My job was to optimize the SEO score and utilize SquareSpace's CSS 'code injection' for custom styling." 
+                  techStack="SquareSpace CMS, HTML, CSS"
                   link="https://www.rarebreedinkstudio.com/" /> {/* https://www.rarebreedinkstudio.com/ */}
               </div>
             </div>

@@ -32,7 +32,7 @@ export default function MyAnimatedBox({ position, size, color }) {
 
             Colors: https://github.com/mrdoob/three.js/blob/master/src/math/Color.js
             */}
-            <meshBasicMaterial color={color} wireframe={true} wireframeLinewidth={2.0}/>
+            <meshStandardMaterial color={color} wireframe={false} wireframeLinewidth={2.0}/>
         </mesh>
     )
 }
