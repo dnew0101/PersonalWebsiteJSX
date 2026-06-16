@@ -63,7 +63,7 @@ function App() {
                 David Newman
               </h1>
               <p>
-                CS student at UW Tacoma
+                UW Tacoma CS Graduate <br/> Class of 2026
               </p>
             </div>
           </div>
@@ -136,9 +136,9 @@ function App() {
               <div className="flex flex-row items-center text-center justify-center mb-4">
                 <div className="flex flex-col bg-neutral-950 border-1 px-2 w-[80%] items-center text-center mb-4">
                   <p className="text-box w-[80%] my-4 text-sm">
-                    I'm currently in my senior year at <span className="text-purple-500 font-bold">UW Tacoma</span>, in the Computer Science undergraduate program. <br/> <br/>
-                    Within my classes, I've found <span>Computer Architecture</span> to be the most interesting, specifically the overlap between the circuits we'd build in Logisim Evolution and the MIPS .asm files we write for the MARS simulator. This was explored when we reconstructed a rudimentary MIPS CPU and ran .asm files throughout! <br/><br/>
-                    Outside of class, my interests tend to be mostly <span className="italic">music-related</span>. This usually consists of guitar covers (mixed/mastered in <span className="text-green-300">Ableton 12</span>) or diving into music software development, with frameworks like <span className="text-amber-600">JUCE</span>, for C++.
+                    I recently graduated from <span className="text-purple-500 font-bold">UW Tacoma's</span> Computer Science undergraduate program. <br/> <br/>
+                    Within my classes, I've found <span>Software Engineering</span> to be the most interesting, specifically the coordinated team workflows, software development lifecycle, and watching a project sprout from a simple school idea into a legitimate game slated for release on <span className="text-amber-300"><a href="https://www.itch.io">itch.io</a></span>. <br/><br/>
+                    Outside of class, my interests tend to be mostly <span className="italic">music-related</span>. This usually consists of guitar covers (mixed/mastered in <span className="text-green-300">Ableton 12</span>) or diving into music software development. Notably, I've scored all themes and sound effects in our Dungeon Adventure game!
                   </p>
                 </div>
               </div>
@@ -154,6 +154,18 @@ function App() {
                   <span className="italic border-b pb-0.5">(With more currently in the works!)</span>
                 </p>
               <div className="flex flex-row flex-wrap text-center justify-center items-start gap-2 mb-4">
+                <ProjectCard 
+                  title="Dungeon Adventure" 
+                  thumbNail="DungeonAdventure.png"
+                  description="Procedurally generated dungeon crawler game, inspired by Earthbound combat system and early Final Fantasy games. Full release on itch.io expected this summer!"
+                  techStack="LibGDX, Java, SQLite, GNUplot"
+                  link="https://github.com/ayush-uwt/DungeonAdventure" /> {/* https://github.com/ayush-uwt/DungeonAdventure */}
+                <ProjectCard 
+                  title="SoundSurf" 
+                  thumbNail="SoundSurf.png"
+                  description="Product of the 24-hour UHackathon event. Stochastically generates a 3D road by ingesting audio data and mapping rhythmic output to each time step."
+                  techStack="JavaScript, React Three Fiber, ExpressJS, WebAssembly, WebGL"
+                  link="https://github.com/dnew0101/SoundSurf" /> {/* https://github.com/dnew0101/SoundSurf */}
                 <ProjectCard 
                   title="Raven Inkwork" 
                   thumbNail="ravenInkwork.png"
@@ -204,7 +216,6 @@ function App() {
                   Get in touch!
                 </p>
               <div className="flex flex-row flex-wrap text-center justify-center items-center gap-4 mb-8">
-                <ResumeCard icon={faFile} contact="Resumé" link="https://www.dropbox.com/scl/fi/vbqj4c0mt0lfiyeuoptot/Updated_Resume.pdf?rlkey=ficm7f0o76jjuq2q5awk8f3ex&st=bkdhew50&dl=0"/>
                 <ContactCard icon={faSquareLinkedin} color="hover:bg-blue-700" contact="LinkedIn" link="https://www.linkedin.com/in/david-newman0101/"/>
                 <ContactCard icon={faEnvelope} color="hover:bg-green-700" contact="Gmail" link={mailLink} />
                 <ContactCard icon={faSquareGithub} color="hover:bg-purple-700" contact="Github" link="https://github.com/dnew0101"/>
