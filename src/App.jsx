@@ -172,12 +172,12 @@ function App() {
                   description="Full-stack NextJS website, hosted on Vercel. Designed with no-nonsense UX, high-contrast accessibility, SEO optimization, and performance optimization."
                   techStack="NextJS, TailwindCSS, Vite, TypeScript, React, Vercel"
                   link="https://www.raveninkwork.com" /> {/* https://www.raveninkwork.com */}
-                <ProjectCard 
+                {/* <ProjectCard 
                   title="Phacebook" 
                   thumbNail="phacebook.png"
                   description="Reverse engineered Facebook log-in to study the phishing attack pipeline. Uploads submitted credentials to private Firebase database." 
                   techStack="React, JavaScript, TailwindCSS, Firebase"
-                  link="https://github.com/dnew0101/phacebook" /> {/* https://github.com/dnew0101/phacebook */}
+                  link="https://github.com/dnew0101/phacebook" /> https://github.com/dnew0101/phacebook */}
                 <ProjectCard 
                   title="Gain Audio Plug-In" 
                   thumbNail="gainProject.png"
@@ -216,6 +216,7 @@ function App() {
                   Get in touch!
                 </p>
               <div className="flex flex-row flex-wrap text-center justify-center items-center gap-4 mb-8">
+                <ResumeCard icon ={faFile} contact="Resume" link="https://drive.google.com/file/d/1QMslhj8QADdX6ZZD-BSCcc50N7LAah6f/view?usp=sharing" />
                 <ContactCard icon={faSquareLinkedin} color="hover:bg-blue-700" contact="LinkedIn" link="https://www.linkedin.com/in/david-newman0101/"/>
                 <ContactCard icon={faEnvelope} color="hover:bg-green-700" contact="Gmail" link={mailLink} />
                 <ContactCard icon={faSquareGithub} color="hover:bg-purple-700" contact="Github" link="https://github.com/dnew0101"/>
